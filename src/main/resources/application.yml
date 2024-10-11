@@ -1,0 +1,27 @@
+server:
+  port: 5005
+
+spring:
+  application:
+    name: OLX-Login
+  datasource:
+      #url: jdbc:mysql://localhost:3306/logindb
+      url: jdbc:mysql://olxuserdb.ctiei02ug9yv.eu-north-1.rds.amazonaws.com:3306/olxlogindb
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Root1234
+  jpa:
+      hibernate.ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQLDialect
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # Exposes all endpoints
+  endpoint:
+    shutdown:
+      enabled: true  # Enables the shutdown endpoint
+               
+   
